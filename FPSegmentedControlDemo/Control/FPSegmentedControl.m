@@ -81,6 +81,7 @@
         
         self.backgroundColor = [UIColor clearColor];
         self.tintColor = [UIColor grayColor];
+        self.backgroundTextColor = [UIColor whiteColor];
         self.clipsToBounds = YES;
         self.userInteractionEnabled = YES;
         self.animateToInitialSelection = NO;
@@ -163,12 +164,12 @@
         [self.backgroundImage drawInRect:rect];
     
     else {
-        CGContextSetFillColorWithColor(context, [UIColor colorWithWhite:1 alpha:1].CGColor);
+        CGContextSetFillColorWithColor(context, self.backgroundTextColor.CGColor);
         CGPathRef bottomGlossRect = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(0, 0, rect.size.width, rect.size.height) cornerRadius:self.cornerRadius].CGPath;
         CGContextAddPath(context, bottomGlossRect);
         CGContextFillPath(context);
         
-        CGPathRef roundedRect = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(0, 0, rect.size.width, rect.size.height-1) cornerRadius:self.cornerRadius].CGPath;
+        CGPathRef roundedRect = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(0, 0, rect.size.width, rect.size.height) cornerRadius:self.cornerRadius].CGPath;
         CGContextAddPath(context, roundedRect);
         CGContextClip(context);
         

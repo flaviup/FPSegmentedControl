@@ -39,6 +39,7 @@
 
 @property (nonatomic, strong) UIFont *font; // default is [UIFont boldSystemFontOfSize:15]
 @property (nonatomic, strong) UIColor *textColor; // default is [UIColor grayColor];
+@property (nonatomic, strong) UIColor *backgroundTextColor; // default is [UIColor whiteColor]
 @property (nonatomic, strong) UIColor *textShadowColor;  // default is [UIColor blackColor]
 @property (nonatomic, readwrite) CGSize textShadowOffset;  // default is CGSizeMake(0, -1)
 

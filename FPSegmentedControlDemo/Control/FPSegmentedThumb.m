@@ -108,8 +108,8 @@
         CGFloat dx = 0.0f;
         
         if ([self.segmentedControl.titlesArray count] > 0 && self.segmentedControl.selectedIndex == 0) {
-            CGPathRef fillRect1 = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(rect.origin.x, rect.origin.y, 2 * cornerRadius, rect.size.height - 1) cornerRadius:cornerRadius].CGPath;
-            CGPathRef maskRect = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(rect.origin.x + cornerRadius, rect.origin.y, cornerRadius, rect.size.height - 1) cornerRadius:0].CGPath;
+            CGPathRef fillRect1 = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(rect.origin.x, rect.origin.y, 2 * cornerRadius, rect.size.height) cornerRadius:cornerRadius].CGPath;
+            CGPathRef maskRect = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(rect.origin.x + cornerRadius, rect.origin.y, cornerRadius, rect.size.height) cornerRadius:0].CGPath;
             CGContextSaveGState(context);
             CGContextAddPath(context, fillRect1);
             CGContextAddPath(context, maskRect);
@@ -126,8 +126,8 @@
         }
         
         if ([self.segmentedControl.titlesArray count] > 0 && self.segmentedControl.selectedIndex == [self.segmentedControl.titlesArray count] - 1) {
-            CGPathRef fillRect2 = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(rect.origin.x + rect.size.width - 2 * cornerRadius, rect.origin.y, 2 * cornerRadius, rect.size.height - 1) cornerRadius:cornerRadius].CGPath;
-            CGPathRef maskRect = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(rect.origin.x + rect.size.width - 2 * cornerRadius, rect.origin.y, cornerRadius, rect.size.height - 1) cornerRadius:0].CGPath;
+            CGPathRef fillRect2 = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(rect.origin.x + rect.size.width - 2 * cornerRadius, rect.origin.y, 2 * cornerRadius, rect.size.height) cornerRadius:cornerRadius].CGPath;
+            CGPathRef maskRect = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(rect.origin.x + rect.size.width - 2 * cornerRadius, rect.origin.y, cornerRadius, rect.size.height) cornerRadius:0].CGPath;
             CGContextSaveGState(context);
             CGContextAddPath(context, fillRect2);
             CGContextAddPath(context, maskRect);
@@ -139,7 +139,7 @@
         }
 
         [self.tintColor set];
-        UIRectFillUsingBlendMode(CGRectMake(rect.origin.x + dx, rect.origin.y, rect.size.width - cornerRadius, rect.size.height - 1), kCGBlendModeOverlay);
+        UIRectFillUsingBlendMode(CGRectMake(rect.origin.x + dx, rect.origin.y, rect.size.width - cornerRadius, rect.size.height), kCGBlendModeOverlay);
     }
 }
 
